@@ -1,0 +1,25 @@
+{
+  "name": "jm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.oschina.net:agesora/jobMatching.git"
+  },
+  "keywords": [
+    "jobMatching",
+    "agesora"
+  ],
+  "author": "AgeSora",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.2.1"
+  },
+  "babel": {
+        "presets": ["es2015"]
+    }
+}
