@@ -1,8 +1,9 @@
 "use strict";
-const ErrorMessage = "is not correct";
+const ErrorMessage = " is not correct";
 export class recruitment {
-	constructor({job, body, school_exp, prize, ability, cert, job_exp}) {
+	constructor(_id,{job, body, school_exp, prize, ability, cert, job_exp}) {
 		//初始化
+		this._id=_id;
 		this.school_exp = new Array();
 		this.prize = new Array();
 		this.ability = new Array();
@@ -18,7 +19,7 @@ export class recruitment {
 		this.set_job_exp = job_exp;
 	}
 	set set_job(obj) {
-		if (obj.__proto__ === job) {
+		if (obj instanceof job) {
 			this.job = obj;
 		} else {
 			this.throwError('job');
@@ -26,7 +27,7 @@ export class recruitment {
 	}
 
 	set set_body(obj) {
-		if (obj.__proto__ === body) {
+		if (obj instanceof body) {
 			this.body = obj;
 		} else {
 			this.throwError('body');
@@ -39,7 +40,7 @@ export class recruitment {
 				this.school_exp.push(o);
 			}
 		}
-		else if (obj.__proto__ === school_exp) {
+		else if (obj instanceof school_exp) {
 			this.school_exp.push(obj);
 		}
 		else {
@@ -53,7 +54,7 @@ export class recruitment {
 				this.prize.push(o);
 			}
 		}
-		else if (obj.__proto__ === prize) {
+		else if (obj instanceof prize) {
 			this.prize.push(obj);
 		} else {
 			this.throwError('prize');
@@ -66,7 +67,7 @@ export class recruitment {
 				this.ability.push(o);
 			}
 		}
-		else if (obj.__proto__ === ability) {
+		else if (obj instanceof ability) {
 			this.ability.push(obj);
 		} else {
 			this.throwError('ability');
@@ -79,7 +80,7 @@ export class recruitment {
 				this.cert.push(o);
 			}
 		}
-		else if (obj.__proto__ === cert) {
+		else if (obj instanceof cert) {
 			this.cert.push(obj);
 		} else {
 			this.throwError('cert');
@@ -92,7 +93,7 @@ export class recruitment {
 				this.job_exp.push(o);
 			}
 		}
-		else if (obj.__proto__ === ability) {
+		else if (obj instanceof job_exp) {
 			this.job_exp.push(obj);
 		} else {
 			this.throwError('job_exp');
@@ -170,7 +171,7 @@ export class prize {
 
 //技能
 export class ability {
-	constructor({aname, level,need}) {
+	constructor({aname, level, need}) {
 		this.aname = aname;
 		this.level = parseInt(level);
 		this.need = parseInt(need);
@@ -179,10 +180,11 @@ export class ability {
 
 //证书
 export class cert {
-	constructor({cname, type, level}) {
+	constructor({cname, type, level,need}) {
 		this.cname = cname;
 		this.type = type;
 		this.level = parseInt(level);
+		this.need = parseInt(need);
 	}
 }
 
@@ -208,7 +210,7 @@ export class job_exp {
 			最小
 			最大
 	身体要求
-		是否接收残疾
+		是否接收残疾 0不接收 1接收 
 		年龄
 			最小
 			最大

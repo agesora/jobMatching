@@ -1,5 +1,5 @@
 "use strict";
-const ErrorMessage = "is not correct";
+const ErrorMessage = " is not correct";
 export class resume {
 	constructor({need_job, body, school_exp, prize, ability, cert, job_exp}) {
 		//初始化
@@ -25,7 +25,7 @@ export class resume {
 				this.need_job.push(o);
 			}
 		}
-		else if (obj.__proto__ === need_job) {
+		else if (obj instanceof need_job) {
 			this.need_job.push(obj);
 		} else {
 			this.throwError('need_job');
@@ -33,7 +33,7 @@ export class resume {
 	}
 
 	set set_body(obj) {
-		if (obj.__proto__ === body) {
+		if (obj instanceof body) {
 			this.body = obj;
 		} else {
 			this.throwError('body');
@@ -46,7 +46,7 @@ export class resume {
 				this.school_exp.push(o);
 			}
 		}
-		else if (obj.__proto__ === school_exp) {
+		else if (obj instanceof school_exp) {
 			this.school_exp.push(obj);
 		}
 		else {
@@ -60,7 +60,7 @@ export class resume {
 				this.prize.push(o);
 			}
 		}
-		else if (obj.__proto__ === prize) {
+		else if (obj instanceof prize) {
 			this.prize.push(obj);
 		} else {
 			this.throwError('prize');
@@ -73,7 +73,7 @@ export class resume {
 				this.ability.push(o);
 			}
 		}
-		else if (obj.__proto__ === ability) {
+		else if (obj instanceof ability) {
 			this.ability.push(obj);
 		} else {
 			this.throwError('ability');
@@ -86,7 +86,7 @@ export class resume {
 				this.cert.push(o);
 			}
 		}
-		else if (obj.__proto__ === cert) {
+		else if (obj instanceof cert) {
 			this.cert.push(obj);
 		} else {
 			this.throwError('cert');
@@ -99,7 +99,7 @@ export class resume {
 				this.job_exp.push(o);
 			}
 		}
-		else if (obj.__proto__ === ability) {
+		else if (obj instanceof job_exp) {
 			this.job_exp.push(obj);
 		} else {
 			this.throwError('job_exp');
@@ -164,8 +164,6 @@ export class body {
 export class school_exp {
 	constructor({degree, start, end}) {
 		this.degree = degree;
-		this.start = start;
-		this.end = end;
 	}
 }
 
@@ -196,10 +194,9 @@ export class cert {
 
 //工作经历
 export class job_exp {
-	constructor({job, start, end}) {
+	constructor({job,num}) {
 		this.job = job;
-		this.start = start;
-		this.end = end;
+		this.num=num;
 	}
 }
 
@@ -225,8 +222,6 @@ export class job_exp {
 		体重
 学校经历[]
 	学历 0初中及以下 1中专/技校 2大专 3本科 4硕士 5博士
-	开始日期
-	结束日期
 获奖[]
 	奖项类型
 	奖项等级 0区级 1市级 2国家级 3世界级
@@ -240,5 +235,4 @@ export class job_exp {
 工作经历[]
 	职位
 	年数
-
 */
