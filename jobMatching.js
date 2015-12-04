@@ -32,9 +32,9 @@ function getScore(j,r,t,m,f) {
 		var cache=new Map();
 		for(let rm of ra){
 			let result=m(jm,rm,cache);
-			if(result.totalAdd){
-				mark.total+=result.totalAdd;
-			}
+			// if(result.totalAdd){
+			// 	mark.total+=result.totalAdd;
+			// }
 			if(result.tonext=='go'){
 				mark.get+=result.mark;
 			}

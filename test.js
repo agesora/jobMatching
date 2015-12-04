@@ -1,13 +1,14 @@
 var jobMatching = require('./index');
 var JobHunter = jobMatching.JobHunter;
 var Recruitment = jobMatching.Recruitment;
+
 var j = new JobHunter.resume({
 	need_job: [new JobHunter.need_job({
 		job_name: "项目经理",
 		type: "IT",
 		work_time: {
-			start: "8:00",
-			end: "10:00"
+			start: "12:00",
+			end: "21:00"
 		},
 		job_type: 1,
 		salary: {
