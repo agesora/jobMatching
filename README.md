@@ -255,6 +255,20 @@ var j={
 	}]
 }
 
+//创建自定义规则
+var rule=new jobMatching.Rule(false);
+rule.use('jneed_job', 'rneed_job', null, function (j, r, cache) {
+	if(j.job_name==r.job_name){
+		return {mark:5,tonext:'break'};
+	}
+	else{
+		return {
+			mark:0,
+			tonext:'go'
+		}
+	}
+});
+
 //使用匹配
 jobMatching.match({ job_hunter: j, recruitments: r,rule:rule },function (err, result) {
 	if (err) {
@@ -264,6 +278,7 @@ jobMatching.match({ job_hunter: j, recruitments: r,rule:rule },function (err, re
 		console.log(JSON.stringify(result));
 	}
 });
+
 ```
 
 
