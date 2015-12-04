@@ -341,7 +341,9 @@ jobMatching.match({ job_hunter: j, recruitments: r,rule:rule },function (err, re
 > 用于运算完毕后对全部的结果进行处理的函数,使用的话原方法不要使用回调函数
 
 目前拥有的方法有以下几个：
+
 1. addup()单个匹配结果进行累加,使用后结果会面会多出"match_degree"表示累加结果，调用一次后，此函数不可在被调用。
+
 2. exec()输出处理完毕的结果
 
 示例
