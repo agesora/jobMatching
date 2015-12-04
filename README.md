@@ -2,6 +2,10 @@
 
 >   这是一个采用ES6语法的用于计算简历与招聘内容匹配度的组件。匹配规则可根据需求来进行设计，当然组件内自带一套匹配规则模型。
 
+github地址：
+
+[https://github.com/agesora/jobMatching](https://github.com/agesora/jobMatching)
+
 安装方式：
 ```
 npm install node-jobmatch
