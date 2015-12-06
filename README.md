@@ -315,9 +315,11 @@ jobMatching.match({ job_hunter: j, recruitments: r,rule:rule },function (err, re
 ```javascript
 	var rule=new jobMatching.Rule(false);
 	rule.use('简历中的模块名', '招聘信息中的模块名', 这一模块的总分, function (j, r, cache) {
-	对比方法...
-	return { mark: 返回分数, tonext: 'go' };
-});
+		对比方法...
+		return { mark: 返回分数, tonext: 'go' };
+	},function(mark,cache){//处理完毕后的回调
+		return true;
+	});
 
 
 

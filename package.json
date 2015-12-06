@@ -1,8 +1,9 @@
 {
   "name": "node-jobmatch",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
+  "tonicExampleFilename": "test.js",
   "scripts": {
     "test": "node test.js"
   },
