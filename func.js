@@ -9,7 +9,7 @@ export function match({job_hunter, recruitments, rule = default_rule}, callback)
 		if (recruitments instanceof Array) {
 			for (let r of recruitments) {
 				result.push({
-					recruitment: r._id,
+					recruitment: r,
 					mark: JobMatching.matching(job_hunter, r, rule),
 					create_time: new Date()
 				});
@@ -17,7 +17,7 @@ export function match({job_hunter, recruitments, rule = default_rule}, callback)
 		}
 		else {
 			result.push({
-				recruitment_id: recruitments._id,
+				recruitment: recruitments,
 				mark: JobMatching.matching(job_hunter, recruitments, rule),
 				create_time: new Date()
 			});
