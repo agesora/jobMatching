@@ -69,7 +69,7 @@ default_rule.use('ability', 'ability', null, function (j, r, cache) {
 		j.aname == r.aname,
 		j.level >= r.level,
 	];
-	if (r.need == 1 && cache.has(r)) {
+	if (r.need == 1 && !cache.has(r)) {
 		cache.set(r, false);
 	}
 	for (let d of determine) {

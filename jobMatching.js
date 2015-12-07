@@ -27,9 +27,9 @@ function getScore(j,r,t,m,f) {
 		total:t,
 		get:0,
 	}
+	var cache=new Map();
 	let flag=false;
 	for(let jm of ja){
-		var cache=new Map();
 		for(let rm of ra){
 			let result=m(jm,rm,cache);
 			// if(result.totalAdd){
